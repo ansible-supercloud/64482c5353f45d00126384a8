@@ -1,0 +1,63 @@
+apiVersion: cloud.ibm.com/v1alpha1
+kind: BillOfMaterial
+metadata:
+  name: 105-azure-ocp-ipi
+  labels:
+    type: infrastructure
+    platform: azure
+    code: '105'
+  annotations:
+    displayName: Azure OpenShift IPI
+    description: Azure OpenShift Installer Provided Infrastructure
+    dependencies.cloudnativetoolkit.dev/provides: cluster
+    dependencies.cloudnativetoolkit.dev/provides_cluster: azure-ocp-ipi
+spec:
+  version: v1.0.1
+  modules:
+    - name: azure-ocp-ipi
+      alias: azure-ocp-ipi
+      version: v1.2.2
+      variables:
+        - name: region
+          scope: global
+        - name: name_prefix
+          scope: global
+        - name: client_id
+          scope: global
+        - name: client_secret
+          scope: global
+        - name: subscription_id
+          scope: global
+        - name: tenant_id
+          scope: global
+        - name: pull_secret
+          scope: global
+  variables:
+    - name: name_prefix
+      type: string
+      description: OpenShift Cluster Prefix
+    - name: azure-ocp-ipi_domain_resource_group_name
+      type: string
+      description: Resource group name containing the base domain name
+    - name: base_domain
+      type: string
+      description: Base domain name (e.g. myclusters.mydomain.com)
+    - name: region
+      type: string
+      description: Azure region into which to deploy
+    - name: subscription_id
+      type: string
+      description: >-
+        Subscription into which to deploy OpenShift and containing the existing
+        resource group
+    - name: client_id
+      type: string
+      description: The client id (service principal appID) to be used for OpenShift
+    - name: client_secret
+      type: string
+      description: >-
+        The client secret (e.g. service principal password) to be used for
+        OpenShift
+    - name: tenant_id
+      type: string
+      description: Tenant id containing the subscription

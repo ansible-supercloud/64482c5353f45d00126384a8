@@ -1,0 +1,6 @@
+digraph {
+    rankdir="BT"
+    "blob_resource_group (azure-resource-group)"
+"azure-storage-blob (azure-storage-blob)" -> "blob_resource_group (azure-resource-group)"
+"azure-storage-blob (azure-storage-blob)"
+  }

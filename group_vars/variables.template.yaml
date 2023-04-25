@@ -1,0 +1,65 @@
+variables:
+  - name: azure-ocp-ipi_domain_resource_group_name
+    type: string
+    description: Resource group name containing the base domain name
+  - name: azure-storage-blob_storage_account_name
+    type: string
+    description: The name of the Azure Storage Account
+  - name: base_domain
+    type: string
+    description: Base domain name (e.g. myclusters.mydomain.com)
+  - name: blob_resource_group_name
+    type: string
+    description: The name of the resource group
+  - name: client_id
+    type: string
+  - name: gitops_repo_repo
+    type: string
+    description: The short name of the repository (i.e. the part after the org/group name)
+  - name: name_prefix
+    type: string
+    description: OpenShift Cluster Prefix
+  - name: region
+    type: string
+    description: The Azure location where the resource group will be provisioned
+  - name: resource_group_name
+    type: string
+    description: The name of the resource group
+  - name: subscription_id
+    type: string
+  - name: tenant_id
+    type: string
+  - name: util-storage-class-manager_block_storage_class
+    type: string
+    description: The storage class to use for Block storage volumes
+  - name: util-storage-class-manager_file_storage_class
+    type: string
+    description: The storage class to use for File storage volumes
+  - name: util-storage-class-manager_rwo_storage_class
+    type: string
+    description: ReadWriteOnce access type Storage Class
+  - name: util-storage-class-manager_rwx_storage_class
+    type: string
+    description: The storage class to use for Read-Write-Many volumes
+  - name: gitops_repo_host
+    type: string
+    description: The host for the git repository.
+    value: ''
+  - name: gitops_repo_org
+    type: string
+    description: The org/group where the git repository exists/will be provisioned.
+    value: ''
+  - name: gitops_repo_project
+    type: string
+    description: >-
+      The project that will be used for the git repo. (Primarily used for Azure
+      DevOps repos)
+    value: ''
+  - name: gitops_repo_type
+    type: string
+    description: The type of the hosted git repository (github or gitlab).
+    value: ''
+  - name: gitops_repo_username
+    type: string
+    description: The username of the user with access to the repository
+    value: ''
